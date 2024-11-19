@@ -79,59 +79,46 @@ function displayDateTime() {
       });
     }
 
+document.addEventListener("DOMContentLoaded", function() {
     var switchthemebutton = document.getElementById("switch_theme");
-var bg = document.getElementById("bg");
-var footer = document.getElementById("footer");
-var nav = document.getElementById("nav");
+    var bg = document.getElementById("bg");
+    var footer = document.getElementById("footer");
+    var nav = document.getElementById("nav");
 
-function changeTheme() {
-    var classtets = switchthemebutton.classList.contains("btn-light");
-    if (classtets) {
-        bg.classList.remove("bg-light");
-        bg.classList.add("bg-dark");
-        footer.classList.remove("bg-dark");
-        footer.classList.add("bg-secondary");
-        nav.classList.remove("bg-dark");
-        nav.classList.add("bg-secondary");
-        switchthemebutton.classList.remove("btn-light");
-        switchthemebutton.classList.add("btn-dark");
-        localStorage.setItem("theme", "dark"); 
-    } else {
-        bg.classList.remove("bg-dark");
-        bg.classList.add("bg-light");
-        footer.classList.remove("bg-secondary");
-        footer.classList.add("bg-dark");
-        nav.classList.remove("bg-secondary");
-        nav.classList.add("bg-dark");
-        switchthemebutton.classList.remove("btn-dark");
-        switchthemebutton.classList.add("btn-light");
-        localStorage.setItem("theme", "light"); 
+    function changeTheme() {
+        var isLightTheme = switchthemebutton.classList.contains("btn-light");
+        if (isLightTheme) {
+            bg.classList.replace("bg-light", "bg-dark");
+            footer.classList.replace("bg-dark", "bg-secondary");
+            nav.classList.replace("bg-dark", "bg-secondary");
+            switchthemebutton.classList.replace("btn-light", "btn-dark");
+            localStorage.setItem("theme", "dark"); 
+        } else {
+            bg.classList.replace("bg-dark", "bg-light");
+            footer.classList.replace("bg-secondary", "bg-dark");
+            nav.classList.replace("bg-secondary", "bg-dark");
+            switchthemebutton.classList.replace("btn-dark", "btn-light");
+            localStorage.setItem("theme", "light"); 
+        }
     }
-}
-
-
-window.onload = function() {
-    var savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-        bg.classList.remove("bg-light");
-        bg.classList.add("bg-dark");
-        footer.classList.remove("bg-dark");
-        footer.classList.add("bg-secondary");
-        nav.classList.remove("bg-dark");
-        nav.classList.add("bg-secondary");
-        switchthemebutton.classList.remove("btn-light");
-        switchthemebutton.classList.add("btn-dark");
-    } else {
-        bg.classList.remove("bg-dark");
-        bg.classList.add("bg-light");
-        footer.classList.remove("bg-secondary");
-        footer.classList.add("bg-dark");
-        nav.classList.remove("bg-secondary");
-        nav.classList.add("bg-dark");
-        switchthemebutton.classList.remove("btn-dark");
-        switchthemebutton.classList.add("btn-light");
+    function applySavedTheme() {
+        var savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "dark") {
+            bg.classList.replace("bg-light", "bg-dark");
+            footer.classList.replace("bg-dark", "bg-secondary");
+            nav.classList.replace("bg-dark", "bg-secondary");
+            switchthemebutton.classList.replace("btn-light", "btn-dark");
+        } else {
+            bg.classList.replace("bg-dark", "bg-light");
+            footer.classList.replace("bg-secondary", "bg-dark");
+            nav.classList.replace("bg-secondary", "bg-dark");
+            switchthemebutton.classList.replace("btn-dark", "btn-light");
+        }
     }
-};
+    applySavedTheme();
+
+    switchthemebutton.addEventListener("click", changeTheme);
+});
 
 
 function toggleContent() {
