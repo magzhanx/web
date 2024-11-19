@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #7b8182;
+}
+header {
+    background-color: #29292b;
+    color: #fff; 
+    text-align: center; 
+    padding: 15px;
+}
+nav{
+    background-color: #29292b;
+}
+footer {
+    background-color: #29292b;
+    color: #fff; 
+    text-align: center; 
+    padding: 15px;
+}
+.footer-text{
+    color: white;
+}
+.footer_links {
+    margin:  15px;
+    color: #fff;
+}  
+.product_img {
+    align: center;
+    height: 250px;
+}
+
+.product {
+    background-color: #ffffff;
+    padding: 15px;
+    height: 429px;
+}
+.buy h2{
+    font-size: 1.2em;
+    color: white
+    
+}
+.getintouch {
+    text-align: center;
+    margin-top: 10px;
+}
+.modal {
+    display: none; 
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 8px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    text-align: left;
+    outline: none;
+    transition: 0.4s;
+    margin: auto;
+    border: none;
+    display: block;
+  }
+  
+  .panel {
+    background-color: rgb(218, 216, 216);
+    height: auto;
+    display: none;
+    overflow:hidden;
+    margin: auto;
+    width: 50%;
+    padding: 15px;
+    transition: max-height 0.3s ease-in-out;
+  }
+  .faq_button{
+     color: #fff;
+  }
+  .featured{
+    margin-left: 100px;
+  }
+
